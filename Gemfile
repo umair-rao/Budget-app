@@ -28,6 +28,23 @@ gem "jbuilder"
 
 gem 'rubocop', '>= 1.0', '< 2.0'
 
+gem 'rswag'
+
+# For token-based authentication
+gem 'jwt'
+
+# Use Sass to process CSS
+gem "sassc-rails"
+
+# Allows pagination
+gem 'will_paginate'
+
+# For authentication
+gem 'devise'
+
+# For authorization
+gem 'cancancan'
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", ">= 4.0.1"
 
@@ -47,13 +64,17 @@ gem "bootsnap", require: false
 # gem "image_processing", "~> 1.2"
 
 group :development, :test do
+  gem 'database_cleaner'
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem 'rails-controller-testing'
+  gem 'rspec-rails'
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
+  gem 'bullet'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
   # gem "rack-mini-profiler"
@@ -66,4 +87,5 @@ group :test do
   # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
   gem "capybara"
   gem "selenium-webdriver"
+  gem 'webdrivers'
 end
