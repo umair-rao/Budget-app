@@ -31,6 +31,9 @@ The **SmartPocket** keeps track of all your expenses associated with categories.
 - see the calculated total amount of expenses per category
 - update/delete existing categories
 
+## 📖 Project Presentation
+- Presentation Link [here]([https://www.loom.com/share/03984135f2774004a145dc15a651ff83?sid=af554b42-1c93-4168-9d10-3fae49ce5903]
+
 
 ## 🛠 Built With <a name="built-with"></a>
 
