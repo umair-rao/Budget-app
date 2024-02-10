@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pages/splash'
+  get 'pages/about'
   devise_for :users
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
@@ -17,8 +19,10 @@ Rails.application.routes.draw do
       root :to => 'pages#splash', as: :unauthenticated_root
     end
   end
-  
+
   resources :groups do
     resources :purchases
   end
+
+  resources :users, only: [:show, :edit, :update, :destroy]
 end
