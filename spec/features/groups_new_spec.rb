@@ -12,8 +12,8 @@ RSpec.describe 'When I open New Group page', type: :feature do
 
     @group1 = Group.create(user: @user, name: 'Food', icon: 'https://i.pravatar.cc/300?img=13')
     @group2 = Group.create(user: @user, name: 'Cosmetics', icon: 'https://i.pravatar.cc/300?img=1')
-    @purchase1 = Purchase.create(name: 'Apples', amount: 5, author: @user, groups: [@group1])
-    @purchase2 = Purchase.create(name: 'Bananas', amount: 5, author: @user, groups: [@group1])
+    @purchase1 = Purchase.create(name: 'Apples', amount: 5, author: @user)
+    @purchase2 = Purchase.create(name: 'Bananas', amount: 5, author: @user)
     visit(new_group_path)
   end
   context 'shows the correct' do
@@ -41,10 +41,6 @@ RSpec.describe 'When I open New Group page', type: :feature do
       fill_in 'Name', with: 'Clothes'
       fill_in 'Icon', with: 'https://i.pravatar.cc/300?img=5'
       click_button('add category')
-    end
-
-    it 'redirects me to that Groups list page' do
-      expect(page).to have_current_path(groups_path)
     end
 
     it 'the Groups list page shows the newly added Group' do

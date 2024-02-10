@@ -12,8 +12,8 @@ RSpec.describe 'When I open Group Edit page', type: :feature do
 
     @group1 = Group.create(user: @user, name: 'Food', icon: 'https://i.pravatar.cc/300?img=13')
     @group2 = Group.create(user: @user, name: 'Cosmetics', icon: 'https://i.pravatar.cc/300?img=1')
-    @purchase1 = Purchase.create(name: 'Apples', amount: 5, author: @user, groups: [@group1])
-    @purchase2 = Purchase.create(name: 'Bananas', amount: 5, author: @user, groups: [@group1])
+    @purchase1 = Purchase.create(name: 'Apples', amount: 5, author: @user)
+    @purchase2 = Purchase.create(name: 'Bananas', amount: 5, author: @user)
     visit(edit_group_path(@group1))
   end
   context 'shows the correct' do

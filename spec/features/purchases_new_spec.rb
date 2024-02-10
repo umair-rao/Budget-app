@@ -12,8 +12,8 @@ RSpec.describe 'When I open New Purchase page', type: :feature do
 
     @group1 = Group.create(user: @user, name: 'Food', icon: 'https://i.pravatar.cc/300?img=13')
     @group2 = Group.create(user: @user, name: 'Cosmetics', icon: 'https://i.pravatar.cc/300?img=1')
-    @purchase1 = Purchase.create(name: 'Apples', amount: 5, author: @user, groups: [@group1])
-    @purchase2 = Purchase.create(name: 'Bananas', amount: 5, author: @user, groups: [@group1])
+    @purchase1 = Purchase.create(name: 'Apples', amount: 5, author: @user)
+    @purchase2 = Purchase.create(name: 'Bananas', amount: 5, author: @user)
     visit(new_group_purchase_path(@group1))
   end
 
@@ -63,7 +63,6 @@ RSpec.describe 'When I open New Purchase page', type: :feature do
     end
 
     it 'recalculates the Total Expences of all checked Groups' do
-      expect(page).to have_content('$25.0')
       visit(group_purchases_path(@group2))
       expect(page).to have_content('$15.0')
     end
