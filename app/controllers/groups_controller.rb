@@ -39,7 +39,7 @@ class GroupsController < ApplicationController
     @group = Group.find(params[:id])
     if @group.destroy
       flash[:success] = 'Category was deleted successfully!'
-      redirect_to groups_url
+      redirect_to groups_path
     else
       flash[:error] = @group.errors.full_messages.to_sentence
       render :index
