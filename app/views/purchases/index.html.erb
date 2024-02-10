@@ -19,6 +19,7 @@
       <div class="group_info">
         <span class="name"><%= @group.name %></span>
 
+        <span class="amount">$<%= total_amount(@group)%></span>
         <span class="date"><%= @group.created_at.strftime('%d %b %Y') %></span>
       </div>
     <% end %>
@@ -31,8 +32,8 @@
   <% end %>
 
   <ul class="purchase_list">
-    <% @purchases.each do |purchase| %>
-      <li>
+  <% @purchases.includes([:groups]).each do |purchase| %>
+    <li>
         <%= link_to group_purchase_url(@group, purchase), data: { turbo: false }, class: "item purchase" do %>
           <div class="group_info no_margin">
             <span class="name"><%= purchase.name %></span>
@@ -54,10 +55,6 @@
       </li>
     <% end %>
   </ul>
-  <div class="item checkout">
-    <span class="name">total expences:</span>
-    <span class="amount">$<%= total_amount(@group)%></span>
-  </div>
 </main>
 
 <section id="actions">

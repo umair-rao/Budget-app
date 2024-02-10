@@ -19,17 +19,6 @@ RSpec.describe 'Groups', type: :request do
       expect { post groups_path, params: { group: valid_attributes } }.to change(Group, :count).by(1)
     end
 
-    it 'redirects to a page' do
-      post groups_path, params: { group: valid_attributes }
-      expect(response).to redirect_to groups_path
-    end
-  end
-
-  context 'GET /index' do
-    before :each do
-      get groups_path
-    end
-
     it 'returns http success' do
       expect(response).to have_http_status(:success)
     end

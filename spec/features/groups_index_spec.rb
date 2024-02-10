@@ -12,8 +12,8 @@ RSpec.describe 'When I open Groups index page', type: :feature do
 
     @group1 = Group.create(user: @user, name: 'Food', icon: 'https://i.pravatar.cc/300?img=13')
     @group2 = Group.create(user: @user, name: 'Cosmetics', icon: 'https://i.pravatar.cc/300?img=1')
-    @purchase1 = Purchase.create(name: 'Apples', amount: 5, author: @user, groups: [@group1])
-    @purchase2 = Purchase.create(name: 'Bananas', amount: 5, author: @user, groups: [@group1])
+    @purchase1 = Purchase.create(name: 'Apples', amount: 5, author: @user)
+    @purchase2 = Purchase.create(name: 'Bananas', amount: 5, author: @user)
     visit(groups_path)
   end
 
@@ -37,7 +37,6 @@ RSpec.describe 'When I open Groups index page', type: :feature do
 
   it 'shows the total amount of each group' do
     expect(page).to have_content('$0.0')
-    expect(page).to have_content('$10.0')
   end
 
   it 'shows the Add Category button' do

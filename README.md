@@ -72,7 +72,7 @@ The **SmartPocket** keeps track of all your expenses associated with categories.
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- The Live Demo is available [here](https://)
+- The Live Demo is available [here](https://smart-pocket-app.onrender.com/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

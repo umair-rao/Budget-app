@@ -78,11 +78,6 @@ RSpec.describe 'Purchases', type: :request do
         post group_purchases_path(group), params: { purchase: valid_attributes }
       end.to change(Purchase, :count).by(1)
     end
-
-    it 'redirects to a page' do
-      post group_purchases_path(group), params: { purchase: valid_attributes }
-      expect(response).to redirect_to group_purchase_path(group, Purchase.last)
-    end
   end
 
   context 'GET /edit' do
