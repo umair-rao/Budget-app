@@ -32,7 +32,7 @@ RSpec.describe User, type: :model do
       expect(User.new(name: 'A' * 37, email: 'tomexample.com', password: 'topsecret')).to_not be_valid
     end
   end
-  
+
   context 'attribute password' do
     it 'is valid with existing password' do
       expect(User.new(name: 'Tom', email: 'tom@example.com', password: 'topsecret')).to be_valid
